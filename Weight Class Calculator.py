@@ -1,23 +1,34 @@
-weight_input = int(input("How much do you weigh in lbs?: "))
+def get_weight_class(weight):
+  if 115 <= weight <= 124:
+    return "Strawweight"
+  elif 125 <= weight <= 134:
+    return "Flyweight"
+  elif 135 <= weight <= 144:
+    return "Bantamweight"
+  elif 145 <= weight <= 154:
+    return "Featherweight"
+  elif 155 <= weight <= 169:
+    return "Lightweight"
+  elif 170 <= weight <= 184:
+    return "Welterweight"
+  elif 185 <= weight <= 204:
+    return "Middleweight"
+  elif 205 <= weight <= 264:
+    return "Light_Heavy weight"
+  elif weight >= 265:
+    return "Heavyweight"
+  else:
+    return None
 
-if 115 <= weight_input <= 124:
-    print("You are a Strawweight!")
-elif 125 <= weight_input <= 134:
-    print("You are a Flyweight!")
-elif 135 <= weight_input <= 144:
-    print("You are a Bantamweight!")
-elif 145 <= weight_input <= 154:
-    print("You are a Featherweight!")
-elif 155 <= weight_input <= 169:
-    print("You are a Lightweight!")
-elif 170 <= weight_input <= 184:
-    print("You are a Welterweight!")
-elif 185 <= weight_input <= 204:
-    print("You are a Middleweight!")
-elif 205 <= weight_input <= 264:
-    print("You are a Light_Heavy weight!")
-elif weight_input >= 265:
-    print("You are a Heavyweight!")
+def get_weight():
+  weight = int(input('How much do you weigh in lbs?: '))
+  return weight
+weight_input = get_weight()
+
+weight_class = get_weight_class(weight_input)
+
+if weight_class:
+  print (f"You are a {weight_class}!")
 else:
-    print("Sorry! Not you are not heavy enough yet.")
+  print("Sorry! You are not heavy enough for a listed weight class yet.")
 print("Thank you! This program has concluded...")
