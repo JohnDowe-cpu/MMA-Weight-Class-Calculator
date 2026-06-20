@@ -1,30 +1,23 @@
 weight_input = int(input("How much do you weigh in lbs?: "))
-strawweight = weight_input >= 115 and weight_input <= 124
-flyweight = weight_input >= 125 and weight_input <= 134
-bantamweight = weight_input >= 135 and weight_input <= 144
-featherweight = weight_input >= 145 and weight_input <= 154
-lightweight = weight_input >= 155 and weight_input <= 169
-welterweight = weight_input >= 170 and weight_input <= 184
-middleweight = weight_input >= 185 and weight_input <= 204
-light_heavyweight = weight_input >= 205 and weight_input <= 264
-heavyweight = weight_input >= 265
 
-if strawweight:
+if 115 <= weight_input <= 124:
     print("You are a Strawweight!")
-elif flyweight:
+elif 125 <= weight_input <= 134:
     print("You are a Flyweight!")
-elif bantamweight:
+elif 135 <= weight_input <= 144:
     print("You are a Bantamweight!")
-elif featherweight:
+elif 145 <= weight_input <= 154:
     print("You are a Featherweight!")
-elif lightweight:
+elif 155 <= weight_input <= 169:
     print("You are a Lightweight!")
-elif welterweight:
+elif 170 <= weight_input <= 184:
     print("You are a Welterweight!")
-elif middleweight:
+elif 185 <= weight_input <= 204:
     print("You are a Middleweight!")
-elif light_heavyweight:
+elif 205 <= weight_input <= 264:
     print("You are a Light_Heavy weight!")
-elif heavyweight:
+elif weight_input >= 265:
     print("You are a Heavyweight!")
+else:
+    print("Sorry! Not you are not heavy enough yet.")
 print("Thank you! This program has concluded...")
