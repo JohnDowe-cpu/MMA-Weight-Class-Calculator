@@ -26,15 +26,28 @@ def get_weight():
       return weight
     except ValueError:
       print("Please enter a valid number.")
-    
+
+def get_fighter_name():
+  name = input("What is the fighter's name?: ")
+  return name    
     
 def main():
+  fighter_name = get_fighter_name()
   weight_input = get_weight()
 
   weight_class = get_weight_class(weight_input)
 
+  fighter = {
+    "name": fighter_name,
+    "weight": weight_input,
+    "weight_class": weight_class
+  }
+
   if weight_class:
-    print (f"You are a {weight_class}!")
+    print("\nFighter Profile")
+    print(f"Name: {fighter['name']}")
+    print(f"Weight: {fighter['weight']} lbs")
+    print(f"Class: {fighter['weight_class']}")
   else:
     print("Sorry! You are not heavy enough for a listed weight class yet.")
 
