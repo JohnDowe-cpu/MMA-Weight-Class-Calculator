@@ -29,8 +29,16 @@ def get_weight():
 
 def get_fighter_name():
   name = input("What is the fighter's name?: ")
-  return name    
-    
+  return name
+
+def save_fighter_profile(fighter):
+  with open("fighters.txt", "a") as file:
+    file.write("Fighter Profile\n")
+    file.write(f"Name: {fighter['name']}\n")
+    file.write(f"Weight: {fighter['weight']} lbs\n")
+    file.write(f"Class: {fighter['weight_class']}\n")
+    file.write("--------------------\n")
+
 def main():
   fighter_name = get_fighter_name()
   weight_input = get_weight()
@@ -48,6 +56,9 @@ def main():
     print(f"Name: {fighter['name']}")
     print(f"Weight: {fighter['weight']} lbs")
     print(f"Class: {fighter['weight_class']}")
+
+    save_fighter_profile(fighter)
+    print("Fighter profile saved to fighters.txt")
   else:
     print("Sorry! You are not heavy enough for a listed weight class yet.")
 

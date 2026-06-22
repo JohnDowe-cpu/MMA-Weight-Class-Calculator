@@ -1,0 +1,15 @@
+Fighter Profile
+Name: John
+Weight: 155 lbs
+Class: Lightweight
+--------------------
+Fighter Profile
+Name: Jon
+Weight: 155 lbs
+Class: Lightweight
+--------------------
+Fighter Profile
+Name: Kayro
+Weight: 169 lbs
+Class: Lightweight
+--------------------
