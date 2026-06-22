@@ -39,6 +39,15 @@ def save_fighter_profile(fighter):
     file.write(f"Class: {fighter['weight_class']}\n")
     file.write("--------------------\n")
 
+def view_saved_fighters():
+    try:
+      with open("fighters.txt", "r") as file:
+        saved_fighters = file.read()
+        print("\nSaved Fighters")
+        print(saved_fighters)
+    except FileNotFoundError:
+      print("No saved fighters found yet.")
+
 def main():
   fighter_name = get_fighter_name()
   weight_input = get_weight()
@@ -61,6 +70,8 @@ def main():
     print("Fighter profile saved to fighters.txt")
   else:
     print("Sorry! You are not heavy enough for a listed weight class yet.")
+
+  view_saved_fighters()
 
   print("Thank you! This program has concluded...")
 
