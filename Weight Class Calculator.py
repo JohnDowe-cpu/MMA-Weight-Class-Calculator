@@ -21,14 +21,24 @@ def get_weight_class(weight):
     return None
 
 def get_weight():
-  weight = int(input('How much do you weigh in lbs?: '))
-  return weight
-weight_input = get_weight()
+  while True:
+    try:
+      weight = int(input('How much do you weigh in lbs?: '))
+      return weight
+    except ValueError:
+      print("Please enter a valid number.")
+    
+    
+def main():
+  weight_input = get_weight()
 
-weight_class = get_weight_class(weight_input)
+  weight_class = get_weight_class(weight_input)
 
-if weight_class:
-  print (f"You are a {weight_class}!")
-else:
-  print("Sorry! You are not heavy enough for a listed weight class yet.")
-print("Thank you! This program has concluded...")
+  if weight_class:
+    print (f"You are a {weight_class}!")
+  else:
+    print("Sorry! You are not heavy enough for a listed weight class yet.")
+
+  print("Thank you! This program has concluded...")
+
+main()
