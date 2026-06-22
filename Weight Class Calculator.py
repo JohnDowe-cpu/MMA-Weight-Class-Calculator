@@ -1,24 +1,23 @@
+WEIGHT_CLASSES = [
+  (115, 124, "Strawweight"),
+  (125, 134, "Flyweight"),
+  (135, 144, "Bantamweight"),
+  (145, 154, "Featherweight"),
+  (155, 169, "Lightweight"),
+  (170, 184, "Welterweight"),
+  (185, 204, "Middleweight"),
+  (205, 264, "Light Heavyweight"),
+  (265, None, "Heavyweight")
+]
+
 def get_weight_class(weight):
-  if 115 <= weight <= 124:
-    return "Strawweight"
-  elif 125 <= weight <= 134:
-    return "Flyweight"
-  elif 135 <= weight <= 144:
-    return "Bantamweight"
-  elif 145 <= weight <= 154:
-    return "Featherweight"
-  elif 155 <= weight <= 169:
-    return "Lightweight"
-  elif 170 <= weight <= 184:
-    return "Welterweight"
-  elif 185 <= weight <= 204:
-    return "Middleweight"
-  elif 205 <= weight <= 264:
-    return "Light_Heavy weight"
-  elif weight >= 265:
-    return "Heavyweight"
-  else:
-    return None
+  for min_weight, max_weight, class_name in WEIGHT_CLASSES:
+    if max_weight is None:
+      if weight >= min_weight:
+        return class_name
+    elif min_weight <= weight <= max_weight:
+        return class_name
+  return None
 
 def get_weight():
   while True:
