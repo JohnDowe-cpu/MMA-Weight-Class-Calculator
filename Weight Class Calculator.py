@@ -16,7 +16,7 @@ def get_weight_class(weight):
       if weight >= min_weight:
         return class_name
     elif min_weight <= weight <= max_weight:
-        return class_name
+      return class_name
   return None
 
 def get_weight():
@@ -40,15 +40,25 @@ def save_fighter_profile(fighter):
     file.write("--------------------\n")
 
 def view_saved_fighters():
-    try:
-      with open("fighters.txt", "r") as file:
-        saved_fighters = file.read()
-        print("\nSaved Fighters")
-        print(saved_fighters)
-    except FileNotFoundError:
-      print("No saved fighters found yet.")
+  try:
+    with open("fighters.txt", "r") as file:
+      saved_fighters = file.read()
+      print("\nSaved Fighters")
+      print(saved_fighters)
+  except FileNotFoundError:
+    print("No saved fighters found yet.")
 
-def main():
+def show_menu():
+  print("\nMMA Fighter Tracker")
+  print("1. Add fighter profile")
+  print("2. View saved fighters")
+  print("3. Quit")
+
+def get_menu_choice():
+  choice = input("Choose an option: ")
+  return choice
+
+def create_fighter_profile():
   fighter_name = get_fighter_name()
   weight_input = get_weight()
 
@@ -71,8 +81,19 @@ def main():
   else:
     print("Sorry! You are not heavy enough for a listed weight class yet.")
 
-  view_saved_fighters()
-
-  print("Thank you! This program has concluded...")
+def main():
+  while True:
+    show_menu()
+    choice = get_menu_choice()
+    
+    if choice == "1":
+      create_fighter_profile()
+    elif choice == "2":
+      view_saved_fighters()
+    elif choice == "3":
+      print("Thank you! This program has concluded...")
+      break
+    else:
+      print("Invalid choice. Please choose 1, 2, or 3.")
 
 main()
