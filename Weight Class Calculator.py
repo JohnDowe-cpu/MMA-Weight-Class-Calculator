@@ -22,14 +22,19 @@ def get_weight_class(weight):
 def get_weight():
   while True:
     try:
-      weight = int(input('How much do you weigh in lbs?: '))
+      weight = int(input('How much do you weigh in lbs? (Ex. 155, 200): '))
       return weight
     except ValueError:
       print("Please enter a valid number.")
 
 def get_fighter_name():
-  name = input("What is the fighter's name?: ")
-  return name
+  while True:
+    name = input("What is the fighter's name?: ").strip()
+    
+    if name:
+      return name
+    
+    print("Please enter a fighter name.")
 
 def save_fighter_profile(fighter):
   with open("fighters.txt", "a") as file:
@@ -83,13 +88,13 @@ def create_fighter_profile():
     print("Sorry! You are not heavy enough for a listed weight class yet.")
 
 def search_fighter_by_name():
-  search_name = input("Enter fighter name to search: ")
+  search_name = input("Enter fighter name to search: ").strip()
 
   try:
     with open("fighters.txt", "r") as file:
       saved_fighters = file.read()
 
-      if search_name in saved_fighters:
+      if search_name.lower() in saved_fighters.lower():
         print(f"{search_name} found in saved fighters.")
       else:
         print(f"{search_name} not found.")
@@ -113,4 +118,5 @@ def main():
     else:
       print("Invalid choice. Please choose 1, 2, 3, or 4.")
 
-main()
+if __name__ == "__main__":
+  main()

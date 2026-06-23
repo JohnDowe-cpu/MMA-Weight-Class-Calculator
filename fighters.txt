@@ -1,15 +1,20 @@
 Fighter Profile
-Name: John
-Weight: 155 lbs
-Class: Lightweight
---------------------
-Fighter Profile
 Name: Jon
+Weight: 175 lbs
+Class: Welterweight
+--------------------
+Fighter Profile
+Name: Conner
 Weight: 155 lbs
 Class: Lightweight
 --------------------
 Fighter Profile
-Name: Kayro
-Weight: 169 lbs
-Class: Lightweight
+Name: Alex
+Weight: 280 lbs
+Class: Heavyweight
+--------------------
+Fighter Profile
+Name: Zeke
+Weight: 121 lbs
+Class: Strawweight
 --------------------
