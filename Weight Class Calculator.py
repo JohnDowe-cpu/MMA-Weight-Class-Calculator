@@ -52,7 +52,8 @@ def show_menu():
   print("\nMMA Fighter Tracker")
   print("1. Add fighter profile")
   print("2. View saved fighters")
-  print("3. Quit")
+  print("3. Search fighter by name")
+  print("4. Quit")
 
 def get_menu_choice():
   choice = input("Choose an option: ")
@@ -81,6 +82,20 @@ def create_fighter_profile():
   else:
     print("Sorry! You are not heavy enough for a listed weight class yet.")
 
+def search_fighter_by_name():
+  search_name = input("Enter fighter name to search: ")
+
+  try:
+    with open("fighters.txt", "r") as file:
+      saved_fighters = file.read()
+
+      if search_name in saved_fighters:
+        print(f"{search_name} found in saved fighters.")
+      else:
+        print(f"{search_name} not found.")
+  except FileNotFoundError:
+    print("No saved fighters found yet.")
+
 def main():
   while True:
     show_menu()
@@ -91,9 +106,11 @@ def main():
     elif choice == "2":
       view_saved_fighters()
     elif choice == "3":
+      search_fighter_by_name()
+    elif choice == "4":
       print("Thank you! This program has concluded...")
       break
     else:
-      print("Invalid choice. Please choose 1, 2, or 3.")
+      print("Invalid choice. Please choose 1, 2, 3, or 4.")
 
 main()
