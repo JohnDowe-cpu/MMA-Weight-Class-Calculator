@@ -65,13 +65,13 @@ This project demonstrates:
 Clone the repository:
 
 ```bash
-git clone [https://github.com/YOURUSERNAME/repository-name.git](https://github.com/JohnDowe-cpu/MMA-Weight-Class-Calculator/edit/main/README.md)
+git clone [https://github.com/YOURUSERNAME/repository-name.git](https://github.com/JohnDowe-cpu/mma-eight-class-calculator/edit/main/README.md)
 ```
 
 Navigate into the project:
 
 ```bash
-cd MMA-Weight-Class-Calculator
+cd mma-weight-class-calculator
 ```
 
 Run:
